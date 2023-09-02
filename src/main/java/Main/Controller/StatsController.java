@@ -2,7 +2,7 @@ package Main.Controller;
 
 import Main.Stats;
 import Main.StatsRepository;
-import jakarta.validation.Valid;
+//import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -38,7 +38,7 @@ public class StatsController {
         }
 
         @PostMapping("/stats")
-        ResponseEntity<Stats> createStatss(@Valid @RequestBody Stats stats) throws URISyntaxException {
+        ResponseEntity<Stats> createStatss(@RequestBody Stats stats) throws URISyntaxException {
             log.info("Post" + stats.toString());
             Stats result = statsRepository.save(stats);
             return ResponseEntity.created(new URI("/api/stats/" + result.getId()))
