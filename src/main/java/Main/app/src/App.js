@@ -4,7 +4,7 @@ import './App.css';
 
 const App = () => {
 
-  const [groups, setGroups] = useState([]);
+  const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const App = () => {
     fetch('api/stats')
       .then(response => response.json())
       .then(data => {
-        setGroups(data);
+        setStats(data);
         setLoading(false);
       })
   }, []);
@@ -27,10 +27,12 @@ const App = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div className="App-intro">
-          <h2>JUG List</h2>
-          {groups.map(group =>
-            <div key={group.id}>
-              {group.name}
+          <h2>AAAAAAAAAAAAAAH</h2>
+          {stats.map(stat =>
+            <div key={stat.id}>
+              {stat.name + " "}
+              {stat.code + " "}
+              {stat.id + " "}
             </div>
           )}
         </div>
@@ -40,29 +42,3 @@ const App = () => {
 }
 
 export default App;
-
-//import logo from './logo.svg';
-//import './App.css';
-//
-//function App() {
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//          target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-//  );
-//}
-//
-//export default App;
