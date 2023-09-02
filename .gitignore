@@ -1,0 +1,8 @@
+# Project exclude paths
+/target/
+.idea/vcs.xml
+/resources/application.properties
+/pom.xml
+/package.json
+/package-lock.json
+/node_modules
