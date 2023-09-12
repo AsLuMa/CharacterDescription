@@ -38,7 +38,7 @@ public class StatsController {
         }
 
         @PostMapping("/stats")
-        ResponseEntity<Stats> createStatss(@RequestBody Stats stats) throws URISyntaxException {
+        ResponseEntity<Stats> createStats(@RequestBody Stats stats) throws URISyntaxException {
             log.info("Post" + stats.toString());
             Stats result = statsRepository.save(stats);
             return ResponseEntity.created(new URI("/api/stats/" + result.getId()))
